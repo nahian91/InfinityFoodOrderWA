@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CakeVilla Ultra Pro Max | Premium Handcrafted Cakes</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-spin"></div>
+        <p style="margin-top:20px; font-weight:800; letter-spacing: 1px;">CAKEVILLA LOADING...</p>
+    </div>
+
+    <div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+    
+    <header>
+        <a href="#" class="logo-section">
+            <div class="logo-icon"><i class="fas fa-birthday-cake"></i></div>
+            <div class="logo-text">Cake<span>Villa</span></div>
+        </a>
+        <div class="cart-btn" onclick="toggleDrawer()">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="badge" id="cart-badge">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="greeting">মিষ্টি মুহূর্তের শুরু হোক কেক দিয়ে!</h1>
+            <p>সেরা কারিগরদের হাতে তৈরি ফ্রেশ ও প্রিমিয়াম কেক।</p>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search-input" id="searchBox" placeholder="পছন্দের ফ্লেভার খুঁজুন..." onkeyup="filterMenu()">
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <div class="trust-card"><i class="fas fa-certificate"></i><span>১০০% ফ্রেশ</span></div>
+            <div class="trust-card"><i class="fas fa-truck"></i><span>সেম ডে ডেলিভারি</span></div>
+            <div class="trust-card"><i class="fas fa-magic"></i><span>কাস্টম ডিজাইন</span></div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2>আজকের স্পেশাল কেক 🍰</h2>
+                <span style="color: var(--brand); font-weight: 700; font-size: 14px;">Freshly Baked</span>
+            </div>
+
+            <div class="product-grid" id="menuGrid">
+                </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>আমাদের খুশি গ্রাহক ⭐</h2>
+            </div>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=1" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">সাকিব হাসান</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">চকলেট ফাজ কেকটা অসাধারণ ছিল! ডার্ক চকলেট এর ফ্লেভারটা ছিল প্রিমিয়াম।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=2" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">রাইসা ইসলাম</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">জন্মদিনের কাস্টম ডিজাইনটা হুবহু ছবির মতো হয়েছে। অনেক ধন্যবাদ।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=3" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">তারেক রহমান</div>
+                            <div class="rev-stars">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">ক্রিমটা খুব হালকা আর সুস্বাদু ছিল। ডেলিভারি ঠিক সময়ে পেয়েছি।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=4" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">মালিহা ইবনাত</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">রেড ভেলভেট কেকটা আমার দেখা সেরা। মিষ্টির পরিমাণ একদম পারফেক্ট।</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="section-header">
+                    <h2>সচরাচর জিজ্ঞাসা ❓</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">কাস্টম কেক অর্ডার করার নিয়ম কি? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">আপনার পছন্দের ডিজাইন আমাদের হোয়াটসঅ্যাপে পাঠান। আমরা ২৪ ঘন্টার মধ্যে তৈরি করে ডেলিভারি দেব।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">ডেলিভারি দিতে কতক্ষণ সময় লাগে? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">রেডি কেকগুলো ২-৩ ঘন্টার মধ্যে এবং কাস্টম কেকগুলোর জন্য কমপক্ষে ১ দিন আগে অর্ডার করতে হবে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">ডেলিভারি চার্জ কত? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">সিলেট শহরের ভেতর ডেলিভারি চার্জ মাত্র ৫০ টাকা। কেকের সাইজ অনুযায়ী চার্জ পরিবর্তন হতে পারে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">কেক কি টাটকা থাকে? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">জি, আমরা অর্ডার পাওয়ার পর আমাদের নিজস্ব কিচেনে ফ্রেশ উপাদান দিয়ে কেক বেক করি।</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="floating-bar" id="floatBar" onclick="toggleDrawer()">
+        <div>
+            <span id="floatQty">0</span>টি কেক | <strong id="floatTotal">৳0</strong>
+        </div>
+        <div style="font-weight: 800; display:flex; align-items:center; gap:8px;">
+            কার্ট দেখুন <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+
+    <div class="side-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3><i class="fas fa-birthday-cake" style="color:var(--brand); margin-right:10px;"></i>আপনার অর্ডার</h3>
+            <i class="fas fa-times" style="font-size: 24px; cursor:pointer;" onclick="toggleDrawer()"></i>
+        </div>
+        <div class="drawer-body">
+            <div id="cartList"></div>
+
+            <div id="formWrapper" style="display:none;">
+                <div class="order-form-grid">
+                    <div class="full-width">
+                        <label class="form-label">আপনার নাম *</label>
+                        <input type="text" id="name" class="form-input" placeholder="পুরো নাম লিখুন">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ফোন নম্বর *</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="017XXXXXXXX">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ডেলিভারি ঠিকানা *</label>
+                        <textarea id="address" class="form-input" rows="2" placeholder="বাসা নং, রোড, এলাকা..."></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label">ডেলিভারি তারিখ *</label>
+                        <input type="date" id="delDate" class="form-input">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">কেকের উপরে নাম (যদি থাকে)</label>
+                        <input type="text" id="cakeText" class="form-input" placeholder="যেমন: Happy Birthday Rahul">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ডেলিভারি এলাকা নির্বাচন করুন *</label>
+                        <select id="area" class="form-input" onchange="calculateBill()">
+                            <optgroup label="শহরের ভেতরে (৳৫০)">
+                                <option value="50">জিন্দাবাজার / বন্দরবাজার</option>
+                                <option value="50">আম্বরখানা / চৌহাট্টা</option>
+                            </optgroup>
+                            <optgroup label="শহরের বাইরে (৳১০০)">
+                                <option value="100">শাবিপ্রবি / কুমারগাঁও</option>
+                                <option value="100">শাহপরান / বটেশ্বর</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-footer" id="checkFooter" style="display:none;">
+            <div class="bill-row"><span>সাবটোটাল</span><span id="subTotal">৳0</span></div>
+            <div class="bill-row"><span>ডেলিভারি চার্জ</span><span id="shipCharge">৳৫০</span></div>
+            <div class="bill-row total-row"><span>সর্বমোট</span><span id="grandTotal">৳0</span></div>
+
+            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপে অর্ডার কনফার্ম করুন
+            </button>
+        </div>
+    </div>
+
+    <section class="hygiene-section container">
+        <div class="section-header">
+            <h2>বেকিং হাইজিন 🛡️</h2>
+        </div>
+        <div class="hygiene-grid">
+            <div class="hygiene-card">
+                <div class="hygiene-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                    </svg>
+                </div>
+                <h4>সুরক্ষিত বেকিং</h4>
+                <p>আমাদের কিচেন সম্পূর্ণ জীবাণুমুক্ত এবং স্বাস্থ্যসম্মত।</p>
+            </div>
+            <div class="hygiene-card">
+                <div class="hygiene-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47"></path>
+                    </svg>
+                </div>
+                <h4>প্রিমিয়াম ইনগ্রেডিয়েন্টস</h4>
+                <p>সেরা মানের বাটার, চকলেট এবং ফ্রেশ ক্রিম ব্যবহার করি।</p>
+            </div>
+            <div class="hygiene-card">
+                <div class="hygiene-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    </svg>
+                </div>
+                <h4>নো প্রিজারভেটিভস</h4>
+                <p>আমাদের কেকগুলো ক্ষতিকারক প্রিজারভেটিভ মুক্ত এবং স্বাস্থ্যকর।</p>
+            </div>
+            <div class="hygiene-card">
+                <div class="hygiene-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 8v4l3 3"></path>
+                    </svg>
+                </div>
+                <h4>ফাস্ট হ্যান্ডলিং</h4>
+                <p>বেক করার সাথে সাথে কেকগুলো কোল্ড চেইনে ডেলিভারি করি।</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bulk-order container">
+        <div class="bulk-banner">
+            <div class="bulk-content">
+                <h3>পার্টি ও ওয়েডিং কেক অর্ডার 🎂</h3>
+                <p>বিয়ে বা বড় কোনো ইভেন্টের জন্য কাস্টমাইজড কেক এবং সাশ্রয়ী প্যাকেজ পেতে আমাদের সাথে যোগাযোগ করুন।</p>
+                <a href="tel:+8801700000000" class="bulk-btn"><i class="fas fa-phone-alt"></i> এখনই কল করুন</a>
+            </div>
+            <div class="bulk-image">
+                <i class="fas fa-birthday-cake"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works container">
+        <div class="section-header">
+            <h2>অর্ডার করার সহজ ৪ ধাপ 🛒</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">১</div>
+                <div class="step-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                </div>
+                <h4>ফ্লেভার নির্বাচন</h4>
+                <p>মেনু থেকে আপনার পছন্দের কেক এবং সাইজ পছন্দ করুন।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">২</div>
+                <div class="step-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72"></path></svg>
+                </div>
+                <h4>কার্টে যোগ</h4>
+                <p>আপনার ঝুড়িতে কেকটি যোগ করুন এবং চেকআউটে যান।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">৩</div>
+                <div class="step-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8"></path></svg>
+                </div>
+                <h4>ঠিকানা ও টেক্সট</h4>
+                <p>ডেলিভারি ঠিকানা এবং কেকের উপরের লেখাটি প্রদান করুন।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">৪</div>
+                <div class="step-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect></svg>
+                </div>
+                <h4>হোম ডেলিভারি</h4>
+                <p>আপনার দরজায় নিরাপদ ডেলিভারি বুঝে নিন।</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-text" style="margin-bottom: 15px;">Cake<span>Villa</span></div>
+                    <p>আপনার প্রতিটি উৎসবকে আরও মিষ্টি করতে আমরা নিয়ে এসেছি ঘরোয়া স্বাদের প্রিমিয়াম সব কেক।</p>
+                </div>
+                <div class="footer-links">
+                    <h4>গুরুত্বপূর্ণ লিঙ্ক</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> হোম পেজ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> কাস্টম কেক</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> রিফান্ড পলিসি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>যোগাযোগ</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> সিলেট, বাংলাদেশ</p>
+                    <p><i class="fas fa-phone-alt"></i> +৮৮০ ১৭০০-০০০০০০</p>
+                </div>
+                <div class="footer-social">
+                    <h4>ফলো করুন</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>CakeVilla Ultra Pro Max</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

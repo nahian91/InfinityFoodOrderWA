@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>FoodVilla Ultra Pro Max | Fast Food Edition</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-spin"></div>
+        <p style="margin-top:20px; font-weight:800; letter-spacing: 1px;">PREPARING YOUR FEAST...</p>
+    </div>
+
+    <div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+    
+    <header>
+        <a href="#" class="logo-section">
+            <div class="logo-icon"><i class="fas fa-hamburger"></i></div>
+            <div class="logo-text">Food<span>Villa</span></div>
+        </a>
+        <div class="cart-btn" onclick="toggleDrawer()">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="badge" id="cart-badge">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="greeting">ক্রেভিং মেটাতে সেরা ফাস্ট ফুড!</h1>
+            <p>জুসি বার্গার, ক্রিসপি চিকেন আর চিজের জাদুকরী স্বাদ এখন আপনার দোরগোড়ায়।</p>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search-input" id="searchBox" placeholder="পছন্দের বার্গার বা পিৎজাটি খুঁজুন..." onkeyup="filterMenu()">
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <div class="trust-card"><i class="fas fa-bolt"></i><span>সুপার ফাস্ট</span></div>
+            <div class="trust-card"><i class="fas fa-fire"></i><span>গরম গরম</span></div>
+            <div class="trust-card"><i class="fas fa-cheese"></i><span>সেরা চিজ</span></div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2>আজকের হট মেনু 🔥</h2>
+                <span style="color: var(--brand); font-weight: 700; font-size: 14px;">Fast Food Special</span>
+            </div>
+
+            <div class="product-grid" id="menuGrid">
+                </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>ফুডিদের মতামত ⭐</h2>
+            </div>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=11" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">আরিফ আহমেদ</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">বিফ বার্গারটা জাস্ট মাইন্ড ব্লোয়িং ছিল! প্যাটিটা অনেক জুসি ছিল।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=12" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">তানজিম নিঝুম</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">ক্রিসপি ফ্রাইজগুলো একদম মচমচে ছিল। ডেলিভারিও অনেক ফাস্ট!</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=13" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">সুমাইয়া বিনতে</div>
+                            <div class="rev-stars">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">পিৎজার টপিংস অনেক বেশি ছিল, টেস্টও দারুণ। সসটা আরেকটু বেশি দিলে ভালো হতো।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=14" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">ফয়সাল রহমান</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">ফ্যামিলি বক্সটা বেশ সাশ্রয়ী। বার্থডে পার্টির জন্য একদম পারফেক্ট।</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="section-header">
+                    <h2>সচরাচর জিজ্ঞাসা ❓</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">খাবার কি গরম অবস্থায় পাবো? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">জি, আমরা স্পেশাল ইনসুলেটেড ব্যাগে ডেলিভারি করি যাতে খাবার ওভেন থেকে বের করার মতো গরম থাকে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">ডেলিভারি চার্জ কত? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">ঢাকার ভেতরে ডেলিভারি চার্জ মাত্র ৬০ টাকা এবং বাইরে দূরত্ব অনুযায়ী ১২০ টাকা পর্যন্ত হতে পারে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">কিভাবে পেমেন্ট করবো? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">আমরা ক্যাশ অন ডেলিভারি এবং বিকাশ/নগদ পেমেন্ট গ্রহণ করি।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">আপনারা কি ফ্রোজেন খাবার ব্যবহার করেন? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">একদমই না! আমরা প্রতিদিন ফ্রেশ মাংস এবং সবজি দিয়ে প্রতিটি অর্ডার প্রস্তুত করি।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">বাল্ক অর্ডার (পার্টি) করা যাবে? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">জি! জন্মদিন বা যেকোনো অনুষ্ঠানের জন্য বড় অর্ডার দিতে আমাদের সাথে সরাসরি কল বা হোয়াটসঅ্যাপে যোগাযোগ করুন।</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="floating-bar" id="floatBar" onclick="toggleDrawer()">
+        <div>
+            <span id="floatQty">0</span>টি আইটেম | <strong id="floatTotal">৳0</strong>
+        </div>
+        <div style="font-weight: 800; display:flex; align-items:center; gap:8px;">
+            চেকআউট করুন <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+
+    <div class="side-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3><i class="fas fa-shopping-basket" style="color:var(--brand); margin-right:10px;"></i>আপনার ঝুড়ি</h3>
+            <i class="fas fa-times" style="font-size: 24px; cursor:pointer;" onclick="toggleDrawer()"></i>
+        </div>
+        <div class="drawer-body">
+            <div id="cartList"></div>
+
+            <div id="formWrapper" style="display:none;">
+                <div class="order-form-grid">
+                    <div class="full-width">
+                        <label class="form-label">আপনার নাম *</label>
+                        <input type="text" id="name" class="form-input" placeholder="পুরো নাম লিখুন">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ফোন নম্বর *</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="01XXXXXXXXX">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ডেলিভারি ঠিকানা *</label>
+                        <textarea id="address" class="form-input" rows="2" placeholder="বাসা নং, রোড, এলাকা..."></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label">অর্ডারের তারিখ *</label>
+                        <input type="date" id="delDate" class="form-input">
+                    </div>
+                    <div>
+                        <label class="form-label">সময় স্লট *</label>
+                        <select id="delTime" class="form-input">
+                            <option value="যত দ্রুত সম্ভব">যত দ্রুত সম্ভব</option>
+                            <option value="দুপুর ১২টা - ২টা">দুপুর ১২টা - ২টা</option>
+                            <option value="বিকাল ৪টা - সন্ধ্যা ৬টা">বিকাল ৪টা - সন্ধ্যা ৬টা</option>
+                            <option value="রাত ৮টা - ১০টা">রাত ৮টা - ১০টা</option>
+                        </select>
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ডেলিভারি এলাকা নির্বাচন করুন *</label>
+                        <select id="area" class="form-input" onchange="calculateBill()">
+                            <optgroup label="শহরের ভেতরে (৳৫০)">
+                                <option value="50">জিন্দাবাজার / জেইল রোড / বন্দরবাজার</option>
+                                <option value="50">চৌহাট্টা / আম্বরখানা / দরগাহ মহল্লা</option>
+                                <option value="50">নাইওরপুল / কুমারপাড়া / মিরাবাজার</option>
+                            </optgroup>
+                            <optgroup label="শহরের পার্শ্ববর্তী (৳৭০)">
+                                <option value="70">উপশহর (সব ব্লক) / তেরোরতন</option>
+                                <option value="70">শিবগঞ্জ / টিলাগড় / মিরাপাড়া</option>
+                                <option value="70">বালুচর / আমানউল্লাহ / জালালাবাদ</option>
+                            </optgroup>
+                            <optgroup label="শহরের বাইরে (৳১০০ - ৳১২০)">
+                                <option value="100">মদিনা মার্কেট / পাঠানটুলা</option>
+                                <option value="120">শাবিপ্রবি (SUST) / কুমারগাঁও</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-footer" id="checkFooter" style="display:none;">
+            <div class="bill-row"><span>সাবটোটাল</span><span id="subTotal">৳0</span></div>
+            <div class="bill-row"><span>ডেলিভারি চার্জ</span><span id="shipCharge">৳৫০</span></div>
+            <div class="bill-row total-row"><span>সর্বমোট</span><span id="grandTotal">৳0</span></div>
+
+            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপে অর্ডার কনফার্ম করুন
+            </button>
+        </div>
+    </div>
+
+<section class="hygiene-section container">
+    <div class="section-header">
+        <h2>সুরক্ষা ও কোয়ালিটি 🛡️</h2>
+    </div>
+    
+    <div class="hygiene-grid">
+        <div class="hygiene-card">
+            <div class="hygiene-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                </svg>
+            </div>
+            <h4>হাইজেনিক কিচেন</h4>
+            <p>আমাদের কিচেনে শতভাগ পরিষ্কার-পরিচ্ছন্নতা বজায় রাখা হয়।</p>
+        </div>
+
+        <div class="hygiene-card">
+            <div class="hygiene-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a14 14 0 0013.06 11.53z"></path>
+                </svg>
+            </div>
+            <h4>হ্যান্ড গ্লাভস ও মাস্ক</h4>
+            <p>প্রতিটি বার্গার ও পিৎজা অত্যন্ত সতর্কতার সাথে তৈরি করা হয়।</p>
+        </div>
+
+        <div class="hygiene-card">
+            <div class="hygiene-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"></path>
+                </svg>
+            </div>
+            <h4>তাজা ইনগ্রেডিয়েন্টস</h4>
+            <p>প্রতিদিন ফ্রেশ বান, সবজি এবং হালাল মাংস সংগ্রহ করা হয়।</p>
+        </div>
+
+        <div class="hygiene-card">
+            <div class="hygiene-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 8v4l3 3"></path>
+                </svg>
+            </div>
+            <h4>দ্রুত ডেলিভারি</h4>
+            <p>আমাদের রাইডাররা সবসময় প্রস্তুত আপনার খাবার পৌঁছে দিতে।</p>
+        </div>
+    </div>
+</section>
+
+<section class="bulk-order container">
+    <div class="bulk-banner">
+        <div class="bulk-content">
+            <h3>পার্টি বা ইভেন্ট অর্ডার 🍔</h3>
+            <p>অফিস পার্টি বা জন্মদিনের জন্য সেরা ফাস্ট ফুড প্যাকেজ পেতে এখনই যোগাযোগ করুন।</p>
+            <a href="tel:+8801700000000" class="bulk-btn"><i class="fas fa-phone-alt"></i> কল করুন</a>
+        </div>
+        <div class="bulk-image">
+            <i class="fas fa-truck-fast"></i>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works container">
+    <div class="section-header">
+        <h2>কিভাবে অর্ডার করবেন? 🛒</h2>
+    </div>
+
+    <div class="steps-grid">
+        <div class="step-card">
+            <div class="step-num">১</div>
+            <h4>মেনু বাছুন</h4>
+            <p>আপনার পছন্দের ফাস্ট ফুডটি কার্টে যোগ করুন।</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">২</div>
+            <h4>তথ্য দিন</h4>
+            <p>আপনার নাম, ঠিকানা এবং ফোন নম্বর প্রদান করুন।</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">৩</div>
+            <h4>অর্ডার করুন</h4>
+            <p>হোয়াটসঅ্যাপ বাটনে ক্লিক করে অর্ডার কনফার্ম করুন।</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">৪</div>
+            <h4>উপভোগ করুন</h4>
+            <p>গরম গরম খাবার বুঝে নিয়ে পেমেন্ট সম্পন্ন করুন।</p>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-text" style="margin-bottom: 15px;">Food<span>Villa</span></div>
+                    <p>আমরা কোয়ালিটি এবং স্বাদে বিশ্বাস করি। শহরের সেরা ফাস্ট ফুড এখন এক ক্লিকেই আপনার কাছে।</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>লিঙ্কসমূহ</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> হোম</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> স্পেশাল অফার</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> কন্টাক্ট</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>যোগাযোগ</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> সিলেট, বাংলাদেশ</p>
+                    <p><i class="fas fa-phone-alt"></i> +৮৮০ ১৭০০-০০০০০০</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>ফলো করুন</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>FoodVilla Ultra Pro Max</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

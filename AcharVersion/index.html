@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>রোদ্দুর ও রসনা | খাঁটি ঘরোয়া আচার ও ডেলিকাসি</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-spin"></div>
+        <p style="margin-top:20px; font-weight:800; letter-spacing: 1px;">মশলার ঘ্রাণ ছড়াচ্ছে...</p>
+    </div>
+
+    <div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+    
+    <header>
+        <a href="#" class="logo-section">
+            <div class="logo-icon"><i class="fas fa-pepper-hot"></i></div>
+            <div class="logo-text">রোদ্দুর ও <span>রসনা</span></div>
+        </a>
+        <div class="cart-btn" onclick="toggleDrawer()">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="badge" id="cart-badge">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="greeting">জিভে জল আনা ঘরোয়া আচার!</h1>
+            <p>খাঁটি সরিষার তেল আর রোদে শুকানো মশলায় তৈরি সেই আসল স্বাদ।</p>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search-input" id="searchBox" placeholder="পছন্দের আচারটি খুঁজুন..." onkeyup="filterMenu()">
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <div class="trust-card"><i class="fas fa-sun"></i><span>১০০% রোদে শুকানো</span></div>
+            <div class="trust-card"><i class="fas fa-leaf"></i><span>কেমিক্যাল মুক্ত</span></div>
+            <div class="trust-card"><i class="fas fa-oil-can"></i><span>ঘানি ভাঙা তেল</span></div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2>আজকের স্পেশাল মেনু 🏺</h2>
+                <span style="color: var(--brand); font-weight: 700; font-size: 14px;">Limited Batch</span>
+            </div>
+
+            <div class="product-grid" id="menuGrid">
+                </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>ক্রেতাদের ভালোবাসা ⭐</h2>
+            </div>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=11" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">নুসরাত জাহান</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">কাশ্মীরি আচারটা জাস্ট অসাম! একদম ছোটবেলার কথা মনে করিয়ে দিল।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=12" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">রাইহান আহমেদ</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">রসুনের আচারটা খুব ফ্রেশ ছিল। সরিষার তেলের ঘ্রাণটাই আলাদা। ধন্যবাদ ফুডভিলা!</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=13" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">সাদিয়া রহমান</div>
+                            <div class="rev-stars">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">চালতার আচারটা দারুণ টক-ঝাল-মিষ্টি। ডেলিভারিও খুব দ্রুত পেয়েছি।</p>
+                </div>
+                <div class="review-card">
+                    <div class="rev-header">
+                        <img src="https://i.pravatar.cc/150?u=14" class="rev-avatar">
+                        <div>
+                            <div style="font-weight:800; font-size:14px;">জাহিদ হোসেন</div>
+                            <div class="rev-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555;">বোম্বাই মরিচের আচারটা ঝাল প্রেমীদের জন্য সেরা। প্যাকিং খুব মজবুত ছিল।</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="section-header">
+                    <h2>সচরাচর জিজ্ঞাসা ❓</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">আচার কতদিন ভালো থাকবে? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">তেলের লেয়ার ঠিক থাকলে এবং শুকনো চামচ ব্যবহার করলে আমাদের আচার ১ বছর পর্যন্ত ভালো থাকে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">ডেলিভারি চার্জ কত? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">সিলেট শহরের ভেতরে ৫০-৭০ টাকা এবং কুরিয়ারে সারাদেশে ১২০ টাকা ডেলিভারি চার্জ প্রযোজ্য।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">আপনারা কি ঘরে তৈরি করেন? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">জি, আমাদের প্রতিটি আচার ঘরোয়া পরিবেশে স্বাস্থ্যসম্মত উপায়ে রোদে শুকিয়ে তৈরি করা হয়।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">প্রিজারভেটিভ ব্যবহার করা হয়? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">না, আমরা কোনো কৃত্রিম প্রিজারভেটিভ বা রং ব্যবহার করি না। সরিষার তেল ও লবণের মাধ্যমেই এটি সংরক্ষিত থাকে।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger">বাল্ক অর্ডার কি নেওয়া হয়? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">জি! বিয়ে বা যেকোনো অনুষ্ঠানের জন্য বড় অর্ডার দিতে আমাদের সরাসরি কল করুন।</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="floating-bar" id="floatBar" onclick="toggleDrawer()">
+        <div>
+            <span id="floatQty">0</span>টি আইটেম | <strong id="floatTotal">৳0</strong>
+        </div>
+        <div style="font-weight: 800; display:flex; align-items:center; gap:8px;">
+            অর্ডার দেখুন <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+
+    <div class="side-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3><i class="fas fa-shopping-basket" style="color:var(--brand); margin-right:10px;"></i>আপনার ঝুড়ি</h3>
+            <i class="fas fa-times" style="font-size: 24px; cursor:pointer;" onclick="toggleDrawer()"></i>
+        </div>
+        <div class="drawer-body">
+            <div id="cartList"></div>
+
+            <div id="formWrapper" style="display:none;">
+                <div class="order-form-grid">
+                    <div class="full-width">
+                        <label class="form-label">আপনার নাম *</label>
+                        <input type="text" id="name" class="form-input" placeholder="পুরো নাম লিখুন">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ফোন নম্বর *</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="017XXXXXXXX">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">পূর্ণ ঠিকানা *</label>
+                        <textarea id="address" class="form-input" rows="2" placeholder="বাসা নং, রোড, এলাকা..."></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label">পছন্দের ডেলিভারি তারিখ</label>
+                        <input type="date" id="delDate" class="form-input">
+                    </div>
+                    <div>
+                        <label class="form-label">সময় স্লট</label>
+                        <select id="delTime" class="form-input">
+                            <option value="সকাল ১০টা - দুপুর ১টা">সকাল ১০টা - দুপুর ১টা</option>
+                            <option value="বিকাল ৩টা - সন্ধ্যা ৬টা">বিকাল ৩টা - সন্ধ্যা ৬টা</option>
+                        </select>
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">ডেলিভারি এলাকা নির্বাচন করুন *</label>
+                        <select id="area" class="form-input" onchange="calculateBill()">
+                            <optgroup label="সিলেট শহর (৳৫০-৳৭০)">
+                                <option value="50">জিন্দাবাজার / বন্দরবাজার / আম্বরখানা</option>
+                                <option value="70">উপশহর / শিবগঞ্জ / টিলাগড়</option>
+                            </optgroup>
+                            <optgroup label="সারাদেশে কুরিয়ার (৳১২০)">
+                                <option value="120">ঢাকার ভেতরে (কুরিয়ার)</option>
+                                <option value="120">ঢাকার বাইরে (কুরিয়ার)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-footer" id="checkFooter" style="display:none;">
+            <div class="bill-row"><span>সাবটোটাল</span><span id="subTotal">৳0</span></div>
+            <div class="bill-row"><span>ডেলিভারি চার্জ</span><span id="shipCharge">৳৫০</span></div>
+            <div class="bill-row total-row"><span>সর্বমোট</span><span id="grandTotal">৳0</span></div>
+
+            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপে অর্ডার করুন
+            </button>
+        </div>
+    </div>
+
+    <section class="hygiene-section container">
+        <div class="section-header">
+            <h2>সুরক্ষা ও বিশুদ্ধতা 🛡️</h2>
+        </div>
+        <div class="hygiene-grid">
+            <div class="hygiene-card">
+                <i class="fas fa-hand-sparkles" style="font-size:30px; color:var(--brand); margin-bottom:15px;"></i>
+                <h4>স্বাস্থ্যসম্মত প্যাকিং</h4>
+                <p>গ্লাভস এবং মাস্ক ব্যবহার করে অত্যন্ত পরিচ্ছন্ন পরিবেশে আচার প্যাকেটজাত করা হয়।</p>
+            </div>
+            <div class="hygiene-card">
+                <i class="fas fa-vial-circle-check" style="font-size:30px; color:var(--brand); margin-bottom:15px;"></i>
+                <h4>খাঁটি উপাদান</h4>
+                <p>সেরা মানের সরিষার তেল এবং বাছাইকৃত মশলা ব্যবহারে আমরা আপোষহীন।</p>
+            </div>
+            <div class="hygiene-card">
+                <i class="fas fa-sun" style="font-size:30px; color:var(--brand); margin-bottom:15px;"></i>
+                <h4>প্রাকৃতিক সংরক্ষণ</h4>
+                <p>কোনো কেমিক্যাল ছাড়াই ঘরোয়া পদ্ধতিতে দীর্ঘস্থায়ী স্বাদ নিশ্চিত করি।</p>
+            </div>
+            <div class="hygiene-card">
+                <i class="fas fa-truck-fast" style="font-size:30px; color:var(--brand); margin-bottom:15px;"></i>
+                <h4>সুরক্ষিত ডেলিভারি</h4>
+                <p>কাঁচের বয়ামগুলো অত্যন্ত যত্ন সহকারে আপনার ঠিকানায় পৌঁছে দেওয়া হয়।</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bulk-order container">
+        <div class="bulk-banner">
+            <div class="bulk-content">
+                <h3>উপহার হিসেবে আচারের বক্স? 🎁</h3>
+                <p>প্রিয়জনকে ঘরোয়া স্বাদের আচার উপহার দিন। কাস্টমাইজড গিফট প্যাকের জন্য আমাদের সাথে যোগাযোগ করুন।</p>
+                <a href="tel:+8801700000000" class="bulk-btn"><i class="fas fa-phone-alt"></i> এখনই কল করুন</a>
+            </div>
+            <div class="bulk-image">
+                <i class="fas fa-box-open"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works container">
+        <div class="section-header">
+            <h2>অর্ডার করার ধাপসমূহ 🛒</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">১</div>
+                <h4>মেনু দেখুন</h4>
+                <p>আমাদের বৈচিত্র্যময় আচারের তালিকা থেকে পছন্দেরটি বেছে নিন।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">২</div>
+                <h4>কার্টে যোগ করুন</h4>
+                <p>পরিমাণ নির্বাচন করে আপনার শপিং কার্টে আইটেমগুলো যুক্ত করুন।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">৩</div>
+                <h4>ঠিকানা দিন</h4>
+                <p>আপনার নাম ও ঠিকানা দিয়ে হোয়াটসঅ্যাপে মেসেজ পাঠান।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">৪</div>
+                <h4>ডেলিভারি নিন</h4>
+                <p>আমরা অর্ডার কনফার্ম করে দ্রুত আপনার ঠিকানায় আচার পৌঁছে দেব।</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-text" style="margin-bottom: 15px;">রোদ্দুর ও <span>রসনা</span></div>
+                    <p>আমরা বিশ্বাস করি ভালো খাবার মানেই তৃপ্তি। আপনার শৈশবের আচারের স্বাদ ফিরিয়ে আনাই আমাদের লক্ষ্য।</p>
+                </div>
+                <div class="footer-links">
+                    <h4>লিঙ্কসমূহ</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> হোম পেজ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> আচারের মেনু</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> ডেলিভারি পলিসি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>যোগাযোগ</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> সিলেট, বাংলাদেশ</p>
+                    <p><i class="fas fa-phone-alt"></i> +৮৮০ ১৭০০-০০০০০০</p>
+                </div>
+                <div class="footer-social">
+                    <h4>ফলো করুন</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>FoodVilla Pickles</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

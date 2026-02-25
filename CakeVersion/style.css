@@ -1,7 +1,7 @@
         :root {
-            --brand: #D4AF37;
-            --brand-dark: #D4AF37;
-            --brand-gradient: linear-gradient(135deg, #D4AF37, #D4AF37);
+            --brand: #ff4757;
+            --brand-dark: #e84118;
+            --brand-gradient: linear-gradient(135deg, #ff4757, #ff6b81);
             --dark: #2f3542;
             --gray: #747d8c;
             --light-bg: #f1f2f6;
@@ -833,7 +833,7 @@ footer h4::after {
 /* --- Bulk Order Banner --- */
 .bulk-order { margin-top: 60px; }
 .bulk-banner {
-    background: linear-gradient(135deg, #333, #111);
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
     color: white;
     padding: 40px;
     border-radius: 20px;
